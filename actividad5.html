@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Cambio</title>
+    <link href="css/estilosAc.css" rel="stylesheet"/>
+    <script>
+        function tipo(){
+            var monto = parseInt(document.getElementById("monto").value);
+            var opciones = document.getElementsByName("eleccion");
+            var opciones2 = document.getElementsByName("eleccion2");
+            var cambio = 0;
+            var tipom = 0;
+            var result = 0;
+            if(monto){
+                for (let i = 0; i < opciones2.length; i++){
+                    if(opciones2[i].checked){
+                        cambio = i
+                    }
+                }
+                for (let i = 0; i < opciones.length; i++){
+                    if(opciones[i].checked){
+                        if(i == 0){
+                            if(cambio == 0){
+                                cambio = 1
+                                result = cambio * monto
+                                alert(result+" dolares")
+                            }
+                            else if(cambio == 1){
+                                cambio = 0.91
+                                result = cambio * monto
+                                alert(result+" euros")
+                            }
+                            else{
+                                cambio = 3.78
+                                result = cambio * monto
+                                alert(result+" soles")
+                            }
+                        }
+                        else if(i == 1){
+                            if(cambio == 0){
+                                cambio = 1.1
+                                result = cambio * monto
+                                alert(result+" dolares")
+                            }
+                            else if(cambio == 1){
+                                cambio = 1
+                                result = cambio * monto
+                                alert(result+" euros")
+                            }
+                            else{
+                                cambio = 4.14
+                                result = cambio * monto
+                                alert(result+" soles")
+                            } 
+                        }
+                        else if(i == 2){
+                            if(cambio == 0){
+                                cambio = 0.26
+                                result = cambio * monto
+                                alert(result+" dolares")
+                            }
+                            else if(cambio == 1){
+                                cambio = 0.24
+                                result = cambio * monto
+                                alert(result+" euros")
+                            }
+                            else{
+                                cambio = 1
+                                result = cambio * monto
+                                alert(result+" soles")
+                            }
+                        }
+                    }
+                }
+            }
+            else{
+                alert("Ingrese monto")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>CASA DE CAMBIO</h1>
+        <p>Seleccionar tipo de moneda:</p>
+        <div class="moneda">
+            <input type="radio" name="eleccion" value="opcion1" checked>Dolar<br/>
+            <input type="radio" name="eleccion" value="opcion2" >Euros<br/>
+            <input type="radio" name="eleccion" value="opcion3" >Soles<br/>
+        </div>
+        <p>Seleccionar tipo de cambio:</p>
+        <div class="cambio">
+            <input type="radio" name="eleccion2" value="opcion1" checked>Dolar<br/>
+            <input type="radio" name="eleccion2" value="opcion2" >Euros<br/>
+            <input type="radio" name="eleccion2" value="opcion3" >Soles<br/>
+        </div>
+        <p>Ingrese monto:</p>
+        <form>
+            <input type="text" id="monto">
+            <button type="button" onclick="tipo()">Cotizar</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

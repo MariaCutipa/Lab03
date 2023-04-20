@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;200&family=Inconsolata:wght@300;400&display=swap');
+
+h1,p,input{
+    color: rgb(101, 106, 117);
+}
+h1{
+    font-family: 'Chivo Mono';
+    font-weight: 200;
+    text-align: center;
+}
+p{
+    font-family: 'Inconsolata',;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 30px;
+}
+.contenedor{
+    padding-bottom: 30px;
+    border-color: grey;
+    border-style: solid;
+    border-radius: 4px;
+    width: 400px;
+}
+.moneda,.cambio{
+    display: flex;
+    margin-left: 40px;
+    width: 300px;
+    justify-content: space-around;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+form button{
+    background-color: rgb(101, 106, 117);
+    color: aliceblue;
+    border: none;
+    font-family: 'Inconsolata';
+    padding: 10px;
+    border-radius: 3px;
+}
+
